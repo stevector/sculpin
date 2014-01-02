@@ -31,20 +31,6 @@ class SculpinPostsExtension extends Extension
         $configuration = new Configuration;
         $config = $this->processConfiguration($configuration, $configs);
 
-
-
-//        print_r($config);
-//
-//
-//        print_r("\n\n\n\n");
-//
-//        print_r(!empty($config['content_type_overrides']));
-//
-//
-//        print_r("\n\n\n\n");
-
-
-
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
