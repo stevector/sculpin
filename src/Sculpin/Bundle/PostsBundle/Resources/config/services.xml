@@ -13,6 +13,7 @@
         <parameter key="sculpin_posts.posts_defaults_map.class">Sculpin\Core\Source\Map\DefaultDataMap</parameter>
         <parameter key="sculpin_posts.posts_calculated_date_from_filename_map.class">Sculpin\Core\Source\Map\CalculatedDateFromFilenameMap</parameter>
         <parameter key="sculpin_posts.posts_drafts_map.class">Sculpin\Bundle\PostsBundle\PostsDraftsMap</parameter>
+        <parameter key="sculpin_posts.posts_content_type_overrides_map.class">Sculpin\Bundle\PostsBundle\PostsContentTypeOverridesMap</parameter>
         <parameter key="sculpin_posts.posts_map.class">Sculpin\Core\Source\Map\ChainMap</parameter>
         <parameter key="sculpin_posts.posts_data_provider.class">Sculpin\Contrib\ProxySourceCollection\ProxySourceCollectionDataProvider</parameter>
         <parameter key="sculpin_posts.posts_tags_data_provider.class">Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyDataProvider</parameter>
@@ -41,6 +42,12 @@
                 <argument type="service" id="sculpin_posts.posts_path_filter" />
                 <argument type="service" id="sculpin_posts.posts_drafts_filter" />
             </argument>
+        </service>
+
+        <!-- map content type overrides -->
+        <service id="sculpin_posts.posts_content_type_overrides_map" class="%sculpin_posts.posts_content_type_overrides_map.class%">
+            <argument>%sculpin_posts.content_type_overrides%</argument>
+            <tag name="sculpin_posts.posts_map" />
         </service>
 
         <!-- map default permalink -->
