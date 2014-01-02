@@ -31,6 +31,20 @@ class SculpinPostsExtension extends Extension
         $configuration = new Configuration;
         $config = $this->processConfiguration($configuration, $configs);
 
+
+
+//        print_r($config);
+//
+//
+//        print_r("\n\n\n\n");
+//
+//        print_r(!empty($config['content_type_overrides']));
+//
+//
+//        print_r("\n\n\n\n");
+
+
+
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
@@ -48,6 +62,13 @@ class SculpinPostsExtension extends Extension
             $container->setParameter('sculpin_posts.publish_drafts', $config['publish_drafts']);
         } else {
             $container->setParameter('sculpin_posts.publish_drafts', 'prod' !== $container->getParameter('kernel.environment'));
+        }
+
+        if (empty($config['content_type_overrides'])) {
+          $container->setParameter('sculpin_posts.content_type_overrides', array());
+        }
+        else {
+           $container->setParameter('sculpin_posts.content_type_overrides', $config['content_type_overrides']);
         }
     }
 }

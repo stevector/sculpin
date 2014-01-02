@@ -39,6 +39,9 @@ class Configuration implements ConfigurationInterface
                 ->booleanNode('publish_drafts')->defaultNull()->end()
                 ->scalarNode('permalink')->defaultValue('pretty')->end()
                 ->scalarNode('layout')->defaultValue('post')->end()
+                ->arrayNode('content_type_overrides')
+                    ->defaultValue(array(''))
+                    ->prototype('variable')->end()
             ->end();
 
         return $treeBuilder;
