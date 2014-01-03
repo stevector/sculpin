@@ -10,20 +10,11 @@ class PostsContentTypeAssignmentMap implements MapInterface
     // @todo, Does these properties have to be private? This class is a modified
     // copy of DefaultDataMap which uses a private property. Protected seems
     // like it would be sufficient.
-    private $content_type_overrides;
     private $path_filter_reflection_class;
     private $path_matcher_class;
 
     public function __construct(array $content_type_overrides = array(), $path_filter_class_name = NULL, $path_matcher_class_name = NULL)
     {
-        $this->content_type_overrides = $content_type_overrides;
-
-        // @todo This property should not be hard-coded.
-        $this->overrideable_parameters = array(
-          'permalink',
-          'layout',
-        );
-
         // Multiple real instances of this class will be instaniated in
         // assignType().
         $this->path_filter_reflection_class = new \ReflectionClass($path_filter_class_name ?: 'Sculpin\Core\Source\Filter\AntPathFilter');
