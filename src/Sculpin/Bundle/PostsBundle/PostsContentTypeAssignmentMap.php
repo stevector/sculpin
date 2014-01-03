@@ -35,7 +35,6 @@ class PostsContentTypeAssignmentMap implements MapInterface
         $this->path_matcher_class = $path_matcher_reflection_class->newInstance();
     }
 
-    // @todo move out to a separate posts_map service.
     public function process(SourceInterface $source)
     {
       foreach ($this->content_type_overrides as $type => $overrides) {
