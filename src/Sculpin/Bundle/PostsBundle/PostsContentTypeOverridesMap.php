@@ -25,6 +25,8 @@ class PostsContentTypeOverridesMap implements MapInterface
 
     public function process(SourceInterface $source)
     {
+      // @todo, The number of indentations here tells me that something should
+      // be refactored.
       if ($type = $source->data()->get('type')) {
         if (!empty($this->content_type_overrides[$type])) {
           foreach ($this->content_type_overrides[$type] as $name => $value) {
