@@ -47,5 +47,7 @@ class PostsContentTypeAssignmentMap implements MapInterface
           }
         }
       }
+      // @todo, set a default post type.
+      // $source->data()->set('type', $default_type);
     }
 }
