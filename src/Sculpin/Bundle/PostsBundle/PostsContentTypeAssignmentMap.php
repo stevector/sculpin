@@ -7,14 +7,11 @@ use Sculpin\Core\Source\SourceInterface;
 
 class PostsContentTypeAssignmentMap implements MapInterface
 {
-    // @todo, Does this property have to be private? This class is a modified
+    // @todo, Does these properties have to be private? This class is a modified
     // copy of DefaultDataMap which uses a private property. Protected seems
     // like it would be sufficient.
     private $content_type_overrides;
-
     private $path_filter_reflection_class;
-
-    
     private $path_matcher_class;
 
     public function __construct(array $content_type_overrides = array(), $path_filter_class_name = NULL, $path_matcher_class_name = NULL)
