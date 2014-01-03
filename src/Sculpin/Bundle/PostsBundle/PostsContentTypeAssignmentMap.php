@@ -5,9 +5,6 @@ namespace Sculpin\Bundle\PostsBundle;
 use Sculpin\Core\Source\Map\MapInterface;
 use Sculpin\Core\Source\SourceInterface;
 
-// @todo, Replace direct usage with injection.
-use Sculpin\Core\Source\Filter\AntPathFilter;
-
 class PostsContentTypeAssignmentMap implements MapInterface
 {
     // @todo, Does this property have to be private? This class is a modified
