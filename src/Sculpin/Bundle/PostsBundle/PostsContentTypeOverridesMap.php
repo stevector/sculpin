@@ -12,11 +12,6 @@ class PostsContentTypeOverridesMap implements MapInterface
     // like it would be sufficient.
     private $content_type_overrides;
 
-    private $path_filter_reflection_class;
-
-
-    private $path_matcher_class;
-
     public function __construct(array $content_type_overrides = array())
     {
         $this->content_type_overrides = $content_type_overrides;
@@ -30,7 +25,6 @@ class PostsContentTypeOverridesMap implements MapInterface
 
     public function process(SourceInterface $source)
     {
-
       if ($type = $source->data()->get('type')) {
         if (!empty($this->content_type_overrides[$type])) {
           foreach ($this->content_type_overrides[$type] as $name => $value) {
