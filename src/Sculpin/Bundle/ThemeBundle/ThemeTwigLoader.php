@@ -31,6 +31,7 @@ class ThemeTwigLoader implements \Twig_LoaderInterface, \Twig_ExistsLoaderInterf
 
             if ($paths) {
                 $loaders[] = new FlexibleExtensionFilesystemLoader('', array(), $paths, $extensions);
+                // @todo The addition of namespacing could also happen here.
             }
         }
 

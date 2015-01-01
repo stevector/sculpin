@@ -57,6 +57,7 @@ class FlexibleExtensionFilesystemLoader implements \Twig_LoaderInterface, EventS
         );
 
         $this->filesystemLoader = new FilesystemLoader($allPaths);
+        $this->filesystemLoader->setPaths($allPaths, 'sculpin');
         $this->extensions = array_map(function ($ext) {
             return $ext?'.'.$ext:$ext;
         }, $extensions);
